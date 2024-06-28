@@ -1,0 +1,59 @@
+{
+    "model": {
+        "embedding_size": 32,
+        "symbolic_embedding_size": 128,
+        "reasoning_hidden_size": 128,
+        "reasoning_output_size": 128,
+        "num_res_blocks": 4
+    },
+    "train": {
+        "batch_size": 256,
+        "learning_rate": 0.000918077854637833,
+        "epochs": 50,
+        "perception_steps_per_reasoning_step": 1
+    },
+    "visualisation": {
+        "enabled": true,
+        "num_points": 2000,
+        "n_components": 2,
+        "learning_rate": 200,
+        "init": "pca",
+        "perplexity": 50
+    },
+    "clustering": {
+        "num_train_samples": 1000
+    },
+    "weak_labelling": {
+        "model": "blip2_image_text_matching",
+        "model_type": "pretrain",
+        "image_size": [
+            224,
+            224
+        ],
+        "mean": [
+            0.48145466,
+            0.4578275,
+            0.40821073
+        ],
+        "std": [
+            0.26862954,
+            0.26130258,
+            0.27577711
+        ],
+        "batch_size": 256,
+        "num_samples": 1024,
+        "resize": false
+    },
+    "labelling": {
+        "verbose": true
+    },
+    "symbolic_learner": {
+        "timeout": 3600,
+        "example_weight": 100,
+        "num_examples": 50,
+        "learning_mode": "existence",
+        "ilasp_params": [
+            "--max-rule-length=10"
+        ]
+    }
+}

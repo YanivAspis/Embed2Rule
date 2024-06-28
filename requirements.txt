@@ -1,0 +1,8 @@
+torch
+torchvision
+matplotlib
+scikit-learn
+salesforce-lavis
+munkres
+clingo
+lightning-flash

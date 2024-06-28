@@ -1,0 +1,60 @@
+{
+	"model": {
+		"embedding_size": 128,
+		"symbolic_embedding_size": 128,
+		"reasoning_hidden_size": 128,
+		"reasoning_output_size": 128
+	},
+	"train": {
+		"batch_size": 512,
+		"learning_rate": 0.003,
+		"epochs": 50,
+		"use_scheduler": true,
+		"warmup_coefficient": 0.2,
+		"minimum_learning_rate": 0.0001,
+		"dataset_size": 200000,
+		"gradient_clip": 1,
+		"perception_steps_per_reasoning_step": 1
+	},
+	"visualisation": {
+		"num_points": 2000,
+		"n_components": 2,
+		"learning_rate": 200,
+		"init": "pca",
+		"perplexity": 50,
+		"enabled": true
+	},
+	"clustering": {
+		"num_train_samples": 1000
+	},
+	"weak_labelling": {
+		"model": "blip2_image_text_matching",
+		"model_type": "pretrain",
+		"image_size": [
+			224,
+			224
+		],
+		"mean": [
+			0.48145466,
+			0.4578275,
+			0.40821073
+		],
+		"std": [
+			0.26862954,
+			0.26130258,
+			0.27577711
+		],
+		"batch_size": 256,
+		"num_samples": 1024,
+		"resize": false
+	},
+	"labelling": {
+		"verbose": true
+	},
+	"symbolic_learner": {
+		"timeout": 3600,
+		"example_weight": 1,
+		"num_examples": 100,
+		"learning_mode": "classification"
+	}
+}
